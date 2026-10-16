@@ -191,14 +191,19 @@ export async function sendCustomerThankYouEmail(data: EmailData) {
     logoDataUri = '';
   }
 
-  const logoLockup = (logoHeight: number, textSize: number, dividerHeight: number) => `
+  const logoLockup = (logoHeight: number, textSize: number, dividerHeight: number) => {
+    if (logoDataUri) {
+      return `<img src="cid:nitishlogo" alt="nitish solar" height="${logoHeight}" style="height:${logoHeight}px; width:auto; display:block; margin: 0 auto;" />`;
+    }
+    return `
     <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto;">
       <tr>
-        <td style="padding-right: 9px;">${logoDataUri ? `<img src="cid:nitishlogo" alt="nitish" height="${logoHeight}" style="height:${logoHeight}px; width:auto; display:block;" />` : `<span style="font-size:${textSize}px; font-weight:800; color:#ffffff;">nitish</span>`}</td>
+        <td style="padding-right: 9px;"><span style="font-size:${textSize}px; font-weight:800; color:#ffffff;">nitish</span></td>
         <td style="padding-right: 9px;"><div style="width:1.5px; height:${dividerHeight}px; background:rgba(255,255,255,0.4); line-height:${dividerHeight}px; font-size:1px;">&nbsp;</div></td>
         <td><span style="font-size:${textSize}px; font-weight:500; color:#ffffff; font-family:'Segoe UI', Arial, sans-serif; letter-spacing: 0.01em;">Solar</span></td>
       </tr>
     </table>`;
+  };
 
   const htmlContent = `
 <!DOCTYPE html>

@@ -66,7 +66,7 @@ export default function InvoiceDetailPage() {
           <div className="flex items-start justify-between pb-6 border-b border-slate-200">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
-                <Image src="/logo.png" alt="nitish solar logo" width={160} height={40} className="h-10 w-auto object-contain" />
+                <Image src="/logo.png" alt="nitish solar logo" width={160} height={40} className="h-10 w-auto object-contain brightness-0" />
               </div>
               <p className="text-xs text-slate-500 font-medium">
                 Nitish Solar Energy Pvt. Ltd. • Turnkey Engineering, Procurement & Construction (EPC)<br />

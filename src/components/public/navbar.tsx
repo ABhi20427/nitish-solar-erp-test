@@ -108,7 +108,10 @@ export function PublicNavbar({
             href="/"
             className="shrink-0 transition-transform duration-300 ease-out hover:scale-[1.03] active:scale-[0.97]"
           >
-            <BrandLogo variant="light" />
+            <BrandLogo
+              variant="light"
+              imageClassName={isCompact ? 'h-10 sm:h-12' : 'h-11 sm:h-14'}
+            />
           </Link>
 
           {/* Desktop Navigation — sliding pill hover/active indicator, far right */}
